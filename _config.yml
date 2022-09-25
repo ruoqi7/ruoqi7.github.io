@@ -8,5 +8,5 @@ gist:
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
-theme: minima
+theme: cayman
 
