@@ -1,4 +1,4 @@
-# Bioinfomatics Homework1
+# Bioinfomatics Homework
 
 潘若琦 2022311792
 
