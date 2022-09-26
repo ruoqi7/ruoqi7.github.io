@@ -16,7 +16,7 @@ exon长度应该是$5-$4+1
 code：
 
 ```
-cat 1.gtf | awk '$3=="CDS" && $1=="XI"' | sort -rn -k5 | head -10 > 10CDS.txt
+cat 1.gtf | awk '$3=="CDS" && $1=="XI"' | sort -n -k5 | tail -10 > 10CDS.txt
 ```
 
 Results：
