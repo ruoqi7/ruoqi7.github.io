@@ -1,6 +1,6 @@
 # Bioinfomatics Homework1
 
-#### Q1
+#### Q1 解释1.gtf文件中第4、5列代表什么，exon长度应该是$5-$4+1还是$5-$4？
 
 第四列为该行基因在基因组上的起始位点的坐标，第五行为终止位置的坐标
 
@@ -8,23 +8,7 @@ exon长度应该是$5-$4+1
 
 
 
-#### Q2
-
-##### code：
-
-```
-cat 1.gtf | awk '$3=="CDS" && $1=="XI"' | sort -rn -k5 | head -10 > 10CDS.txt
-```
-
-#### Q1
-
-第四列为该行基因在基因组上的起始位点的坐标，第五行为终止位置的坐标
-
-exon长度应该是$5-$4+1
-
-
-
-#### Q2
+#### Q2 列出1.gtf文件中 XI 号染色体上的后 10 个 CDS （按照每个CDS终止位置的基因组坐标进行sort）。
 
 ##### code：
 
@@ -46,9 +30,7 @@ XI	ensembl	CDS	658719	660464	.	-	0	gene_id "YKR105C"; gene_version "1"; transcri
 XI	ensembl	CDS	661442	663286	.	+	0	gene_id "YKR106W"; gene_version "1"; transcript_id "YKR106W"; transcript_version "1"; exon_number "1"; gene_name "GEX2"; gene_source "ensembl"; gene_biotype "protein_coding"; transcript_name "GEX2"; transcript_source "ensembl"; transcript_biotype "protein_coding"; protein_id "YKR106W"; protein_version "1";
 ```
 
-
-
-#### Q3
+#### Q3 统计 IV 号染色体上各类 feature （1.gtf文件的第3列，有些注释文件中还应同时考虑第2列） 的数目，并按升序排列。
 
 ##### code：
 
@@ -56,7 +38,7 @@ XI	ensembl	CDS	661442	663286	.	+	0	gene_id "YKR106W"; gene_version "1"; transcri
 cat 1.gtf | awk '$1 == "IV" {x[$3]++} END {for(i in x) print(i ":" x[i])}' | sort -t ":" -n -k2  > feature.txt 
 ```
 
-##### results：
+##### Results：
 
 - start_codon:853 
 - stop_codon:853
@@ -66,20 +48,3 @@ cat 1.gtf | awk '$1 == "IV" {x[$3]++} END {for(i in x) print(i ":" x[i])}' | sor
 - exon:933
 
 
-
-#### Q3
-
-##### code：
-
-```
-cat 1.gtf | awk '$1 == "IV" {x[$3]++} END {for(i in x) print(i ":" x[i])}' | sort -t ":" -n -k2  > feature.txt 
-```
-
-##### results：
-
-- start_codon:853 
-- stop_codon:853
-- gene:886
-- transcript:886
-- CDS:895
-- exon:933
